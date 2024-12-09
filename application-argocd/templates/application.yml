@@ -6,14 +6,11 @@ metadata:
 spec:
   project: {{ .Values.project }}
   source:
-    - repoURL: {{ .Values.repoURL }}
-      targetRevision: {{ .Values.targetRevision }}
-      path: {{ .Values.path }}
-    - repoURL: {{ .Values.gitops.repoURL }}
-      targetRevision: HEAD
-      helm:
+    repoURL: {{ .Values.repoURL }}
+    targetRevision: {{ .Values.targetRevision }}
+    helm:
       valueFiles: 
-        - ./application-argocd/values.yaml 
+        - https://github.com/OmerSade1/GitOps/blob/main/application-argocd/values.yaml
   destination:
     server: {{ .Values.server }}
     namespace: {{ .Values.namespace }}
