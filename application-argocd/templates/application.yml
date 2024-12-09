@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.name }}
-  namespace: {{ .Values.argocdNamespace }}
+  name: {{ .Values.app.name }}
+  namespace: {{ .Values.app.argocdNamespace }}
 spec:
-  project: {{ .Values.project }}
+  project: {{ .Values.app.project }}
   source:
    - path: app
-     repoURL: {{.Values.repoURL }}
-     targetRevision: {{ .Values.targetRevision}}
+     repoURL: {{.Values.app.repoURL }}
+     targetRevision: {{ .Values.app.targetRevision }}
      helm:
        valueFiles: 
          - $values/application-argocd/values.yaml
@@ -16,9 +16,9 @@ spec:
      targetRevision: HEAD
      ref: values
   destination:
-    server: {{ .Values.server }}
-    namespace: {{ .Values.namespace }}
+    server: {{ .Values.app.server }}
+    namespace: {{ .Values.app.namespace }}
   syncPolicy:
     automated:
-      prune: {{ .Values.syncPolicy.prune }}
-      selfHeal: {{ .Values.syncPolicy.selfHeal }}
+      prune: {{ .Values.app.syncPolicy.prune }}
+      selfHeal: {{ .Values.app.syncPolicy.selfHeal }}

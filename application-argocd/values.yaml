@@ -1,21 +1,22 @@
-name: my-app
-argocdNamespace: argocd
-project: default
-repoURL: https://github.com/OmerSade1/helm-chart-app
-targetRevision: HEAD
-path: app
-server: https://kubernetes.default.svc
-namespace: default
-syncPolicy:
-  prune: true
-  selfHeal: true
+app:
+  name: my-app
+  argocdNamespace: argocd
+  project: default
+  repoURL: https://github.com/OmerSade1/helm-chart-app
+  targetRevision: HEAD
+  path: app
+  server: https://kubernetes.default.svc
+  namespace: default
+  syncPolicy:
+    prune: true
+    selfHeal: true
 
 gitops:
   repoURL: https://github.com/OmerSade1/GitOps
 
 
 
-replicaCount: 3
+replicaCount: 6
 
 
 
