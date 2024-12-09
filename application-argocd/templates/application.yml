@@ -6,7 +6,7 @@ metadata:
 spec:
   project: {{ .Values.project }}
   source:
-   - path: helm
+   - path: app
      repoURL: {{.Values.repoURL }}
      targetRevision: {{ .Values.targetRevision}}
      helm:
