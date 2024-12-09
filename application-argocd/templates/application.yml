@@ -9,9 +9,9 @@ spec:
     repoURL: {{ .Values.app.repoURL }}
     targetRevision: {{ .Values.app.targetRevision }}
     path: {{ .Values.app.path }}
-      helm:
-        valueFiles:
-          - $values/application-argocd/values.yaml
+    helm:
+      valueFiles:
+        - application-argocd/values.yaml
   destination:
     server: {{ .Values.app.server }}
     namespace: {{ .Values.app.namespace }}
