@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: {{ .Values.app.repoURL }}
     targetRevision: {{ .Values.app.targetRevision }}
-    path: $values/{{ .Values.app.path }}
+    path: app
     helm:
       valueFiles:
         - $values/environments/{{ .Values.global.environment }}/values.yaml
