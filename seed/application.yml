@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/OmerSade1/GitOps
     targetRevision: HEAD
-    path: application-argocd
+    path: environments/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: default
