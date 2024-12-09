@@ -7,14 +7,14 @@ spec:
   project: {{ .Values.project }}
   source:
    - path: helm
-      repoURL: {{.Values.repoURL }}
-      targetRevision: {{ .Values.targetRevision}}
-      helm:
-        valueFiles: 
-          - $values/application-argocd/values.yaml
-    - repoURL: {{ .Values.gitops.repoURL }}
-      targetRevision: HEAD
-      ref: values
+     repoURL: {{.Values.repoURL }}
+     targetRevision: {{ .Values.targetRevision}}
+     helm:
+       valueFiles: 
+         - $values/application-argocd/values.yaml
+   - repoURL: {{ .Values.gitops.repoURL }}
+     targetRevision: HEAD
+     ref: values
   destination:
     server: {{ .Values.server }}
     namespace: {{ .Values.namespace }}
