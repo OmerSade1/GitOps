@@ -6,15 +6,15 @@ metadata:
 spec:
   project: {{ .Values.app.project }}
   source:
-   - path: app
-     repoURL: {{.Values.app.repoURL }}
-     targetRevision: {{ .Values.app.targetRevision }}
-     helm:
-       valueFiles: 
-         - $values/application-argocd/values.yaml
-   - repoURL: {{ .Values.gitops.repoURL }}
-     targetRevision: HEAD
-     ref: values
+  - repoURL: https://charts.bitnami.com/bitnami
+    chart: nginx
+    targetRevision: 18.2.6
+    helm:
+      valueFiles:
+      - $values/application-argocd/values.yaml
+  - repoURL: {{ .Values.gitops.repoURL }}
+    targetRevision: HEAD
+    ref: values
   destination:
     server: {{ .Values.app.server }}
     namespace: {{ .Values.app.namespace }}
