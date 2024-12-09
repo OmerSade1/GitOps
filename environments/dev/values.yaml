@@ -4,7 +4,7 @@ app:
   project: default
   repoURL: https://github.com/OmerSade1/GitOps
   targetRevision: HEAD
-  path: ./app
+  path: app
   server: https://kubernetes.default.svc
   namespace: default
   syncPolicy:

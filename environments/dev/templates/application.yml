@@ -8,10 +8,10 @@ spec:
   source:
     repoURL: {{ .Values.app.repoURL }}
     targetRevision: {{ .Values.app.targetRevision }}
-    path: {{ .Values.app.path }}
+    path: app
     helm:
       valueFiles:
-        - $values/environments/{{ .Values.global.environment}}/values.yaml
+        - $values/environments/{{ .Values.global.environment }}/values.yaml
   destination:
     server: {{ .Values.app.server }}
     namespace: {{ .Values.app.namespace }}
