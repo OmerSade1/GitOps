@@ -13,6 +13,8 @@ syncPolicy:
 gitops:
   repoURL: https://github.com/OmerSade1/GitOps
 
+valuesFilePath: application-argocd/values.yaml 
+
 # Default values for app.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.

@@ -11,7 +11,7 @@ spec:
     path: {{ .Values.path }}
     helm:
       valueFiles: 
-        - ./application-argocd/values.yaml
+        - {{ .Values.valuesFilePath }}
   destination:
     server: {{ .Values.server }}
     namespace: {{ .Values.namespace }}
