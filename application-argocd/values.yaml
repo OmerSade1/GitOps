@@ -3,7 +3,7 @@ argocdNamespace: argocd
 project: default
 repoURL: https://github.com/OmerSade1/helm-chart-app
 targetRevision: HEAD
-path: ./app
+path: app
 server: https://kubernetes.default.svc
 namespace: default
 syncPolicy:
