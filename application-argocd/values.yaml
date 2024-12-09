@@ -2,7 +2,7 @@ app:
   name: my-app
   argocdNamespace: argocd
   project: default
-  repoURL: https://github.com/OmerSade1/helm-chart-app
+  repoURL: https://github.com/OmerSade1/GitOps
   targetRevision: HEAD
   path: app
   server: https://kubernetes.default.svc
@@ -10,9 +10,6 @@ app:
   syncPolicy:
     prune: true
     selfHeal: true
-
-gitops:
-  repoURL: https://github.com/OmerSade1/GitOps
 
 
 
