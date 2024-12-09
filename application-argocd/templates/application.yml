@@ -11,7 +11,7 @@ spec:
     path: {{ .Values.path }}
     helm:
       valueFiles: 
-        - $values/{{ .Values.global.enviorment }}/values.yaml 
+        - ./{{ .Values.global.enviorment }}/values.yaml 
   destination:
     server: {{ .Values.server }}
     namespace: {{ .Values.namespace }}
