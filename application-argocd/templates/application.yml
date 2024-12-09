@@ -11,7 +11,7 @@ spec:
     path: {{ .Values.path }}
     helm:
       valueFiles: 
-        - https://github.com/OmerSade1/GitOps/main/application-argocd/values.yaml
+        - https://github.com/OmerSade1/GitOps/blob/main/application-argocd/values.yaml
   destination:
     server: {{ .Values.server }}
     namespace: {{ .Values.namespace }}
