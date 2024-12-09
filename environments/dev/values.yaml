@@ -14,7 +14,7 @@ app:
 global:
   environment: dev
 
-replicaCount: 6
+replicaCount: 3
 
 
 
