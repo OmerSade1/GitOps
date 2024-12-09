@@ -11,7 +11,8 @@ app:
     prune: true
     selfHeal: true
 
-
+global:
+  environment: dev
 
 replicaCount: 6
 
