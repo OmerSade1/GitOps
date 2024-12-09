@@ -1,0 +1,11 @@
+name: seed-app
+argocdNamespace: argocd
+project: default
+repoURL: https://github.com/OmerSade1/GitOps
+targetRevision: HEAD
+path: ./application-argocd
+server: https://kubernetes.default.svc
+namespace: default
+syncPolicy:
+  prune: true
+  selfHeal: true
