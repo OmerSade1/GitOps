@@ -6,10 +6,12 @@ metadata:
 spec:
   project: {{ .Values.project }}
   source:
-    repoURL: {{ .Values.repoURL }}
-    targetRevision: {{ .Values.targetRevision }}
-    path: {{ .Values.path }}
-    helm:
+    - repoURL: {{ .Values.repoURL }}
+      targetRevision: {{ .Values.targetRevision }}
+      path: {{ .Values.path }}
+    - repoURL: {{ .Values.gitops.repoURL }}
+      targetRevision: HEAD
+      helm:
       valueFiles: 
         - ./application-argocd/values.yaml 
   destination:
