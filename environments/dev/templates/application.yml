@@ -1,21 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.app.name }}
-  namespace: {{ .Values.app.argocdNamespace }}
+  name: argocd-app
+  namespace: argocd
 spec:
-  project: {{ .Values.app.project }}
-  source:
-    repoURL: {{ .Values.app.repoURL }}
-    targetRevision: {{ .Values.app.targetRevision }}
-    path: {{ .Values.app.path }}
+  project: default
+  sources:
+  - repoURL: https://github.com/OmerSade1/helm-chart-app
+    path: app
+    targetRevision: HEAD
     helm:
       valueFiles:
-        - $values/environments/{{ .Values.global.environment }}/values.yaml
+      - $values/environments/{{ .Values.global.environment }}/values.yaml
+  - repoURL: https://github.com/OmerSade1/GitOps
+    targetRevision: HEAD
+    ref: values
   destination:
-    server: {{ .Values.app.server }}
-    namespace: {{ .Values.app.namespace }}
+    server: https://kubernetes.default.svc
+    namespace: default
   syncPolicy:
     automated:
-      prune: {{ .Values.app.syncPolicy.prune }}
-      selfHeal: {{ .Values.app.syncPolicy.selfHeal }}
+      prune: true
+      selfHeal: true
