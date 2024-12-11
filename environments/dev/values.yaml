@@ -11,6 +11,9 @@ app:
     prune: true
     selfHeal: true
 
+chart_app: 
+  repoURL: https://github.com/OmerSade1/helm-chart-app
+
 global:
   environment: dev
 
