@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-app
+  namespace: argocd
+spec:
+  project: default
+  sources:
+  - repoURL: https://github.com/OmerSade1/helm-chart-app
+    path: app
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+      - $values/environments/{{ .Values.global.environment }}/values.yaml
+  - repoURL: https://github.com/OmerSade1/GitOps
+    targetRevision: HEAD
+    ref: values

@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: seed-app
+  name: seed
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/OmerSade1/GitOps
     targetRevision: HEAD
-    path: environments/dev
+    path: environments/dev/templates/application-sources.yml
   destination:
     server: https://kubernetes.default.svc
     namespace: default
